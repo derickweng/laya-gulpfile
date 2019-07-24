@@ -71,6 +71,7 @@ var Main = /** @class */ (function () {
     Main.prototype.onConfigLoaded = function () {
         //加载IDE指定的场景
         GameConfig_1.default.startScene && Laya.Scene.open(GameConfig_1.default.startScene);
+        console.log('GameConfig: ', GameConfig_1.default);
     };
     return Main;
 }());

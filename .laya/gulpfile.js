@@ -78,7 +78,7 @@ if (watchify) {
 				baseDir: "../bin/"
 			}
 		});
-
+		//  watchify监听文件刷新
 		watchedBrowserify.on("update", () => {
 			isBuildError = false;
 			runSequence('build', () => {
@@ -86,7 +86,8 @@ if (watchify) {
 					browserSync.reload();
 				}
 			});
-		});
+		}); 
+		// 打印watchify编译日志
+		watchedBrowserify.on("log", gutil.log);
 	});
-	watchedBrowserify.on("log", gutil.log);
 }
